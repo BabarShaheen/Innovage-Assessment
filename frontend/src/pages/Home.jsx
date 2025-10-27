@@ -145,7 +145,7 @@ function HomeContent() {
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-white/20 rounded-lg">
                   <svg
-                    className="w-5 h-5 text-white"
+                    className="w-5 h-5 text-primary-600"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -159,8 +159,8 @@ function HomeContent() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-white/80 text-sm">Total Notes</p>
-                  <p className="text-white text-2xl font-bold">
+                  <p className="text-neutral-600 text-sm">Total Notes</p>
+                  <p className="text-neutral-900 text-2xl font-bold">
                     {notes.length}
                   </p>
                 </div>
@@ -280,39 +280,6 @@ function HomeContent() {
           )}
 
           {/* Quick Actions */}
-          {notes.length > 0 && (
-            <div className="mt-12 text-center">
-              <Card variant="outlined" className="p-6">
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
-                  Need more organization?
-                </h3>
-                <p className="text-neutral-600 mb-4">
-                  Use tags and categories to keep your notes organized
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button as={Link} to="/create" variant="primary">
-                    Create Another Note
-                  </Button>
-                  <Button variant="ghost">
-                    <svg
-                      className="w-4 h-4 mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
-                      />
-                    </svg>
-                    Filter Notes
-                  </Button>
-                </div>
-              </Card>
-            </div>
-          )}
         </div>
       </div>
     </>

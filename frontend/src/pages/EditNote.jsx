@@ -301,11 +301,15 @@ function EditNoteContent() {
               <div className="flex items-center space-x-4">
                 <button
                   onClick={() => navigate("/")}
-                  className="p-2 hover:bg-neutral-100 rounded-lg transition-colors"
                   aria-label="Go back"
+                  className="p-2 rounded-lg bg-black text-white 
+             hover:bg-gray-900 active:scale-95 
+             transition-all duration-200 shadow-sm 
+             hover:shadow-md focus:outline-none focus:ring-2 
+             focus:ring-offset-2 focus:ring-gray-700"
                 >
                   <svg
-                    className="w-5 h-5 text-neutral-600"
+                    className="w-5 h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -318,6 +322,7 @@ function EditNoteContent() {
                     />
                   </svg>
                 </button>
+
                 <div>
                   <h1 className="text-2xl font-bold text-neutral-900">
                     Edit Note

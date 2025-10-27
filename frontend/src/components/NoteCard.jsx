@@ -128,16 +128,21 @@ export default function NoteCard({ note, onDelete, deleting = false }) {
 
       {/* Actions */}
       <div className="p-4 pt-2 mt-auto">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between space-x-3">
+          {/* ✏️ Edit Button */}
           <Button
             as={Link}
             to={`/edit/${note._id}`}
             variant="ghost"
             size="sm"
-            className="text-primary-600 hover:text-primary-700 hover:bg-primary-50"
+            className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium 
+                 text-emerald-600 border border-emerald-300 rounded-lg 
+                 bg-gradient-to-r from-white to-emerald-50 
+                 hover:from-emerald-50 hover:to-emerald-100 
+                 hover:shadow-md transition-all duration-200"
           >
             <svg
-              className="w-4 h-4 mr-1"
+              className="w-4 h-4"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -146,23 +151,30 @@ export default function NoteCard({ note, onDelete, deleting = false }) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414
+             a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
               />
             </svg>
             Edit
           </Button>
 
+          {/* 🗑 Delete Button */}
           <Button
             onClick={() => onDelete(note._id)}
             variant="ghost"
             size="sm"
             loading={deleting}
             disabled={deleting}
-            className="text-danger-600 hover:text-danger-700 hover:bg-danger-50"
+            className={`flex items-center gap-1.5 px-4 py-2 text-sm font-medium 
+                  text-red-600 border border-red-300 rounded-lg 
+                  bg-gradient-to-r from-white to-red-50 
+                  hover:from-red-50 hover:to-red-100 
+                  hover:shadow-md transition-all duration-200
+                  ${deleting ? "opacity-60 cursor-not-allowed" : ""}`}
           >
             {!deleting && (
               <svg
-                className="w-4 h-4 mr-1"
+                className="w-4 h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -171,7 +183,9 @@ export default function NoteCard({ note, onDelete, deleting = false }) {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={2}
-                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862
+               a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4
+               a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
                 />
               </svg>
             )}
